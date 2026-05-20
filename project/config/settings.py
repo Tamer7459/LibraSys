@@ -123,9 +123,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')   # مجلد جديد مُس
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),                  # static العام
-    os.path.join(BASE_DIR, 'project/static'),          # static داخل project
+    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'config/static'),
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
