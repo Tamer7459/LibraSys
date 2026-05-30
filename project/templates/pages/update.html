@@ -1,29 +1,38 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% block content %}
 <div style="direction: rtl" class="wrapper">
-    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <div class="card card-primary">
-            <div class="card-header">
-                <h3 class="card-title">تعديل الكتاب</h3>
+        <div class="form-page-wrapper">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="glass-card fade-in-up">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fas fa-edit ml-1" style="color: var(--primary);"></i>
+                                    تعديل الكتاب
+                                </h3>
+                            </div>
+                            <form method="POST" enctype="multipart/form-data">
+                                <div class="card-body">
+                                    {% csrf_token %}
+                                    {{ form.as_p }}
+                                    <small id="totalrente" class="form-text text-muted"></small>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between">
+                                    <a href="{% url 'index' %}" class="btn btn-secondary">
+                                        <i class="fas fa-arrow-right ml-1"></i> رجوع
+                                    </a>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-save ml-1"></i> حفظ التعديلات
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- /.card-header -->
-            <!-- form start -->
-            <form method="POST" enctype="multipart/form-data">
-                <div class="card-body">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-
-                    <small id="totalrente" class="form-text text-muted"></small>
-                </div>
-                <!-- /.card-body -->
-
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">حفظ</button>
-                </div>
-            </form>
         </div>
     </div>
 </div>
-{%endblock%}
+{% endblock %}

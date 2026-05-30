@@ -1,0 +1,104 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - list [ref=e3]:
+      - listitem [ref=e4]:
+        - link "" [ref=e5] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e6]: 
+      - listitem [ref=e7]:
+        - link " الرئيسية" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e9]: 
+          - text: الرئيسية
+    - generic [ref=e11]:
+      - searchbox "Search" [ref=e12]
+      - button "" [ref=e14] [cursor=pointer]:
+        - generic [ref=e15]: 
+    - list [ref=e16]:
+      - listitem [ref=e17]:
+        - button "" [ref=e18] [cursor=pointer]:
+          - generic [ref=e19]: 
+  - complementary [ref=e20]:
+    - link " LibraSys" [ref=e21] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e22]:
+        - generic [ref=e23]: 
+        - text: LibraSys
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - generic [ref=e27]: 
+        - link " لوحة التحكم" [ref=e29] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e30]: 
+          - text: لوحة التحكم
+      - navigation [ref=e31]:
+        - menu [ref=e32]:
+          - listitem [ref=e33]:
+            - link " الإحصائيات" [ref=e34] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e35]: 
+              - paragraph [ref=e36]: الإحصائيات
+          - listitem [ref=e37]:
+            - link " جميع الكتب" [ref=e38] [cursor=pointer]:
+              - /url: /books/
+              - generic [ref=e39]: 
+              - paragraph [ref=e40]: جميع الكتب
+          - listitem [ref=e41]:
+            - generic [ref=e42]: 
+            - text: التصنيفات
+          - listitem [ref=e43]:
+            - link " تصفح التصنيفات " [ref=e44] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e45]: 
+              - paragraph [ref=e46]:
+                - text: تصفح التصنيفات
+                - generic [ref=e47]: 
+            - text:    
+          - listitem [ref=e48]:
+            - generic [ref=e49]: 
+            - text: الحالة
+          - listitem [ref=e50] [cursor=pointer]:
+            - generic [ref=e51]:
+              - generic [ref=e52]: 
+              - paragraph [ref=e53]: الكل
+          - listitem [ref=e54] [cursor=pointer]:
+            - generic [ref=e55]:
+              - generic [ref=e56]: 
+              - paragraph [ref=e57]: تم بيعه
+          - listitem [ref=e58] [cursor=pointer]:
+            - generic [ref=e59]:
+              - generic [ref=e60]: 
+              - paragraph [ref=e61]: مستعار
+          - listitem [ref=e62] [cursor=pointer]:
+            - generic [ref=e63]:
+              - generic [ref=e64]: 
+              - paragraph [ref=e65]: متاح
+  - generic [ref=e72]:
+    - generic [ref=e74]: 
+    - heading "حذف الكتاب" [level=3] [ref=e75]
+    - paragraph [ref=e76]: "\"game of war\""
+    - paragraph [ref=e77]: هل أنت متأكد أنك تريد حذف هذا الكتاب؟
+    - paragraph [ref=e78]: هذا الإجراء لا يمكن التراجع عنه
+    - generic [ref=e80]:
+      - link " تراجع" [ref=e81] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e82]: 
+        - text: تراجع
+      - button " حذف" [ref=e83] [cursor=pointer]:
+        - generic [ref=e84]: 
+        - text: حذف
+  - contentinfo [ref=e85]:
+    - generic [ref=e86]:
+      - generic [ref=e87]:
+        - strong [ref=e88]: LibraSys © 2025-2026
+        - text: "| نظام إدارة المكتبات"
+      - generic [ref=e89]:
+        - link "" [ref=e90] [cursor=pointer]:
+          - /url: https://github.com/Tamer7459
+          - generic [ref=e91]: 
+        - link "" [ref=e92] [cursor=pointer]:
+          - /url: https://www.facebook.com/pktamer1
+          - generic [ref=e93]: 
+        - link "" [ref=e94] [cursor=pointer]:
+          - /url: https://www.instagram.com/x_tamer._x/
+          - generic [ref=e95]: 

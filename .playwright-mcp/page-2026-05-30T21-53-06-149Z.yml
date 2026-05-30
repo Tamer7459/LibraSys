@@ -1,0 +1,196 @@
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - list [ref=e3]:
+      - listitem [ref=e4]:
+        - link "" [ref=e5] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e6]: 
+      - listitem [ref=e7]:
+        - link " الرئيسية" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e9]: 
+          - text: الرئيسية
+    - generic [ref=e11]:
+      - searchbox "Search" [ref=e12]
+      - button "" [ref=e14] [cursor=pointer]:
+        - generic [ref=e15]: 
+    - list [ref=e16]:
+      - listitem [ref=e17]:
+        - button "" [ref=e18] [cursor=pointer]:
+          - generic [ref=e19]: 
+  - complementary [ref=e20]:
+    - link [ref=e215] [cursor=pointer]:
+      - /url: /
+    - generic [ref=e24]:
+      - generic [ref=e27]: 
+      - navigation [ref=e31]:
+        - menu [ref=e32]:
+          - listitem [ref=e33]:
+            - link "" [ref=e216] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e35]: 
+          - listitem [ref=e37]:
+            - link "" [ref=e217] [cursor=pointer]:
+              - /url: /books/
+              - generic [ref=e39]: 
+          - text: 
+          - listitem [ref=e43]:
+            - link "" [ref=e218] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e45]: 
+            - text:      
+          - text: 
+          - listitem [ref=e50] [cursor=pointer]:
+            - generic [ref=e52]: 
+          - listitem [ref=e54] [cursor=pointer]:
+            - generic [ref=e56]: 
+          - listitem [ref=e58] [cursor=pointer]:
+            - generic [ref=e60]: 
+          - listitem [ref=e62] [cursor=pointer]:
+            - generic [ref=e64]: 
+  - generic [ref=e69]:
+    - generic [ref=e71]:
+      - heading " لوحة التحكم" [level=1] [ref=e72]:
+        - generic [ref=e73]: 
+        - text: لوحة التحكم
+      - paragraph [ref=e74]: نظام إدارة المكتبات - LibraSys
+    - generic [ref=e75]:
+      - generic [ref=e78]:
+        - generic [ref=e79]:
+          - generic [ref=e81]: 
+          - generic [ref=e83]: "3"
+          - generic [ref=e84]: إجمالي عدد الكتب
+        - generic [ref=e86]: 
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - generic [ref=e92]:
+            - generic [ref=e94]: 
+            - generic [ref=e95]: $530
+            - generic [ref=e96]: إجمالي الأرباح
+          - generic [ref=e98]: 
+        - generic [ref=e101]:
+          - generic [ref=e102]:
+            - text: أرباح البيع
+            - paragraph [ref=e104]:
+              - text: $
+              - generic [ref=e105]: "30"
+          - generic [ref=e106]:
+            - text: أرباح الاستعارة
+            - paragraph [ref=e108]:
+              - text: $
+              - generic [ref=e109]: "500"
+    - link " إضافة كتاب جديد" [ref=e112] [cursor=pointer]:
+      - /url: "#bookform"
+      - generic [ref=e113]: 
+      - text: إضافة كتاب جديد
+    - text:  
+    - generic [ref=e116]:
+      - generic [ref=e118]:
+        - generic [ref=e119]: 
+        - text: تصفية حسب التصنيف
+      - generic [ref=e120]:
+        - generic [ref=e121] [cursor=pointer]:
+          - generic [ref=e122]: 
+          - text: الكل
+        - generic [ref=e123] [cursor=pointer]:
+          - generic [ref=e124]: 
+          - text: game
+    - generic [ref=e125]:
+      - generic [ref=e127]:
+        - generic [ref=e129]:
+          - button "" [expanded] [active] [ref=e130] [cursor=pointer]:
+            - generic [ref=e131]: 
+          - generic [ref=e219]:
+            - link " تعديل" [ref=e220] [cursor=pointer]:
+              - /url: /update/9/
+              - generic [ref=e221]: 
+              - text: تعديل
+            - link " حذف" [ref=e222] [cursor=pointer]:
+              - /url: /delete/9/
+              - generic [ref=e223]: 
+              - text: حذف
+        - heading "game of war" [level=3] [ref=e133]
+        - generic [ref=e134]:
+          - img "Author" [ref=e135]
+          - generic [ref=e136]: BALI ABDELKOUDDOUS
+        - generic [ref=e138]:
+          - generic [ref=e140]:
+            - heading " 220" [level=5] [ref=e141]:
+              - generic [ref=e142]: 
+              - text: "220"
+            - text: صفحة
+          - generic [ref=e144]:
+            - heading " 300.00" [level=5] [ref=e145]:
+              - generic [ref=e146]: 
+              - text: "300.00"
+            - text: السعر
+          - generic [ref=e148]:
+            - generic [ref=e149]:
+              - generic [ref=e150]: 
+              - text: متاح
+            - generic [ref=e151]: الحالة
+      - generic [ref=e153]:
+        - generic [ref=e155]:
+          - button "" [ref=e156] [cursor=pointer]:
+            - generic [ref=e157]: 
+          - text:  
+        - heading "friv" [level=3] [ref=e159]
+        - generic [ref=e160]:
+          - img "Author" [ref=e161]
+          - generic [ref=e162]: BALI ABDELKOUDDOUS
+        - generic [ref=e164]:
+          - generic [ref=e166]:
+            - heading " 613" [level=5] [ref=e167]:
+              - generic [ref=e168]: 
+              - text: "613"
+            - text: صفحة
+          - generic [ref=e170]:
+            - heading " 100.00" [level=5] [ref=e171]:
+              - generic [ref=e172]: 
+              - text: "100.00"
+            - text: /اليوم
+          - generic [ref=e174]:
+            - generic [ref=e175]:
+              - generic [ref=e176]: 
+              - text: مستعار
+            - generic [ref=e177]: الحالة
+      - generic [ref=e179]:
+        - generic [ref=e181]:
+          - button "" [ref=e182] [cursor=pointer]:
+            - generic [ref=e183]: 
+          - text:  
+        - heading "fortnite" [level=3] [ref=e185]
+        - generic [ref=e186]:
+          - img "Author" [ref=e187]
+          - generic [ref=e188]: BALI ABDELKOUDDOUS
+        - generic [ref=e190]:
+          - generic [ref=e192]:
+            - heading " 516" [level=5] [ref=e193]:
+              - generic [ref=e194]: 
+              - text: "516"
+            - text: صفحة
+          - generic [ref=e196]:
+            - heading " 30.00" [level=5] [ref=e197]:
+              - generic [ref=e198]: 
+              - text: "30.00"
+            - text: السعر
+          - generic [ref=e200]:
+            - generic [ref=e201]:
+              - generic [ref=e202]: 
+              - text: مباع
+            - generic [ref=e203]: الحالة
+  - contentinfo [ref=e204]:
+    - generic [ref=e205]:
+      - generic [ref=e206]:
+        - strong [ref=e207]: LibraSys © 2025-2026
+        - text: "| نظام إدارة المكتبات"
+      - generic [ref=e208]:
+        - link "" [ref=e209] [cursor=pointer]:
+          - /url: https://github.com/Tamer7459
+          - generic [ref=e210]: 
+        - link "" [ref=e211] [cursor=pointer]:
+          - /url: https://www.facebook.com/pktamer1
+          - generic [ref=e212]: 
+        - link "" [ref=e213] [cursor=pointer]:
+          - /url: https://www.instagram.com/x_tamer._x/
+          - generic [ref=e214]: 

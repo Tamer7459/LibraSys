@@ -1,26 +1,25 @@
-<!-- في المكان ده هحط سلايد بار -->
-
-<!-- Main Sidebar Container -->
 <aside
     style="position: fixed"
     class="main-sidebar sidebar-dark-primary elevation-4"
 >
-    <!-- Brand Logo -->
     <a href="{% url 'index' %}" class="brand-link">
-        <span class="brand-text font-weight-light">Tamer</span>
+        <span class="brand-text font-weight-light">
+            <i class="fas fa-book-open ml-1"></i> LibraSys
+        </span>
     </a>
- 
-    <!-- Sidebar -->
+
     <div class="sidebar">
-        <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image"></div>
-            <div class="info">
-                <a href="{% url 'index' %}" class="d-block">Tamer</a>
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex align-items-center">
+            <div class="image">
+                <i class="fas fa-user-astronaut fa-2x" style="color: var(--primary);"></i>
+            </div>
+            <div class="info mr-3">
+                <a href="{% url 'index' %}" class="d-block">
+                    <i class="fas fa-tachometer-alt ml-1"></i> لوحة التحكم
+                </a>
             </div>
         </div>
 
-        <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul
                 class="nav nav-pills nav-sidebar flex-column"
@@ -29,74 +28,107 @@
                 data-accordion="false"
             >
                 <li class="nav-item">
-                    <a href="{% url 'books' %}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>New Books</p>
+                    <a href="{% url 'index' %}" class="nav-link">
+                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <p>الإحصائيات</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{% url 'books' %}" class="nav-link">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p>جميع الكتب</p>
+                    </a>
+                </li>
+
+                <li class="nav-header">
+                    <i class="fas fa-tags ml-1"></i> التصنيفات
+                </li>
+
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
+                        <i class="nav-icon fas fa-folder-open"></i>
                         <p>
-                            Category
+                            تصفح التصنيفات
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a id="addcat" href="#" class="nav-link">
-                                <i class="fa fa-plus"></i>
-                                <p class="text-light">Add New</p>
+                                <i class="fas fa-plus-circle" style="color: var(--secondary);"></i>
+                                <p>إضافة تصنيف جديد</p>
                             </a>
                         </li>
                         <form id="cat" method="POST">
                             {% csrf_token %}
                             <div id="catinput">
-                                {{ categoryform.as_p }}
-                                <button type="submit" class="btn btn-success">
-                                    save
-                                </button>
-                                <button id="backcat" class="btn btn-primary">
-                                    back
-                                </button>
+                                <div class="px-3 py-2">
+                                    {{ categoryform.as_p }}
+                                    <div class="d-flex gap-2 mt-2">
+                                        <button type="submit" class="btn btn-success btn-sm flex-grow-1">
+                                            <i class="fas fa-save ml-1"></i> حفظ
+                                        </button>
+                                        <button id="backcat" class="btn btn-secondary btn-sm">
+                                            <i class="fas fa-arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </form>
 
+                        <li style="cursor: pointer" class="nav-item" data-filter="all">
+                            <a class="nav-link">
+                                <i class="nav-icon fas fa-th-large" style="color: var(--secondary);"></i>
+                                <p class="mb-0">الكل</p>
+                            </a>
+                        </li>
                         {% for category in categories %}
-                        <li style="cursor: pointer" class="nav-item cat{{category.id}}">
-                            <a id="" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>{{ category.name }}</p>
+                        <li style="cursor: pointer" class="nav-item cat{{category.id}}" data-filter="cat{{category.id}}">
+                            <a class="nav-link d-flex align-items-center">
+                                <i class="far fa-circle nav-icon" style="color: var(--primary);"></i>
+                                <p class="flex-grow-1 mb-0">{{ category.name }}</p>
+                                <button
+                                    class="delete-cat-btn"
+                                    onclick="event.stopPropagation(); window.location.href='{% url 'delete_category' category.id %}'"
+                                    title="حذف التصنيف"
+                                >
+                                    <i class="fas fa-times"></i>
+                                </button>
                             </a>
                         </li>
                         {% endfor %}
                     </ul>
                 </li>
 
-                <li class="nav-header"> الحالة </li>
+                <li class="nav-header">
+                    <i class="fas fa-filter ml-1"></i> الحالة
+                </li>
 
-                <li style="cursor: pointer" class="nav-item statussolid">
-                    <a id="statusSold" class="nav-link">
-                        <i class="nav-icon far fa-circle text-danger"></i>
-                        <p class="text">تم بيعه</p>
+                <li style="cursor: pointer" class="nav-item" data-filter="all">
+                    <a class="nav-link">
+                        <i class="nav-icon fas fa-th-large" style="color: var(--secondary);"></i>
+                        <p>الكل</p>
                     </a>
                 </li>
-                <li style="cursor: pointer" class="nav-item statusrental">
-                    <a id="" class="nav-link">
-                        <i class="nav-icon far fa-circle text-warning"></i>
-                        <p>تم استعارته</p>
+                <li style="cursor: pointer" class="nav-item statussolid" data-filter="solid">
+                    <a class="nav-link">
+                        <i class="nav-icon fas fa-circle" style="color: #FF6B6B;"></i>
+                        <p>تم بيعه</p>
                     </a>
                 </li>
-                <li style="cursor: pointer" class="nav-item statusavailable">
-                    <a id="" class="nav-link">
-                        <i class="nav-icon far fa-circle text-info"></i>
+                <li style="cursor: pointer" class="nav-item statusrental" data-filter="rental">
+                    <a class="nav-link">
+                        <i class="nav-icon fas fa-circle" style="color: #FDCB6E;"></i>
+                        <p>مستعار</p>
+                    </a>
+                </li>
+                <li style="cursor: pointer" class="nav-item statusavailable" data-filter="available">
+                    <a class="nav-link">
+                        <i class="nav-icon fas fa-circle" style="color: #00CEC9;"></i>
                         <p>متاح</p>
                     </a>
                 </li>
             </ul>
         </nav>
-        <!-- /.sidebar-menu -->
     </div>
-    <!-- /.sidebar -->
 </aside>
-<!-- نهاية السلايد بار -->

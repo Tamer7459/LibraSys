@@ -5,263 +5,288 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
-        <title>Tamer</title>
-        <link
-            rel="stylesheet"
-            href="{% static 'plugins/fontawesome-free/css/all.min.css' %}"
-        />
-        <!-- Font Awesome Icons -->
-        <link rel="stylesheet" href="{% static 'plugins/jquery_datepacker/jquery_ui.css' %}" />
-        <!-- IonIcons -->
-        <link
-            rel="stylesheet"
-            href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
-        />
-        <!-- Theme style -->
+        <title>Tamer - LibraSys</title>
+        <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ionicons@2.0.1/css/ionicons.min.css" />
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>" />
         <link rel="stylesheet" href="{% static 'dist/css/adminlte_ar.min.css' %}" />
-        <!-- Google Font: Source Sans Pro -->
-        <link
-            href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
-            rel="stylesheet"
-        />
+        <link rel="stylesheet" href="{% static 'dist/css/custom.css' %}" />
         <style>
-            .totalrental, .totalsolid {
-                display: none;
-        }
+            .totalrental, .totalsolid { display: none; }
         </style>
-
     </head>
     <body dir="rtl" class="hold-transition sidebar-mini">
 
-    {% include 'parts/nav.html' %}
+        <!-- Animated Background Orbs -->
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="grid-bg"></div>
 
-    {% include 'parts/sidebar.html' %}
-{% block content %}
+        {% include 'parts/nav.html' %}
+        {% include 'parts/sidebar.html' %}
 
-{% endblock %}
-{% include 'parts/footer.html' %}
-</div>
-<!-- ./wrapper -->
+        {% if messages %}
+        <div class="messages-container" style="position: relative; z-index: 999; padding: 0.5rem 1rem 0; margin-right: 250px;">
+            {% for message in messages %}
+            <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible fade show" role="alert" style="border-radius: var(--radius-md); background: var(--card-bg); backdrop-filter: blur(20px); border: 1px solid var(--card-border); color: var(--text-primary); box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+                <i class="fas fa-{% if message.tags == 'success' %}check-circle{% elif message.tags == 'error' %}exclamation-circle{% else %}info-circle{% endif %} ml-1"></i>
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="color: var(--text-primary);">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
 
-        <!-- REQUIRED SCRIPTS -->
-        <script src="{% static 'plugins/jquery_datepacker/jquery_ui.js' %}"></script>
+        {% block content %}
+        {% endblock %}
 
-        <!-- jQuery -->
+        {% include 'parts/footer.html' %}
+    </div>
+
         <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
-        <!-- Bootstrap -->
         <script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-        <!-- AdminLTE -->
         <script src="{% static 'dist/js/adminlte.js' %}"></script>
-        <!-- OPTIONAL SCRIPTS -->
-
         <script src="{% static 'plugins/chart.js/Chart.min.js' %}"></script>
-
         <script src="{% static 'dist/js/demo.js' %}"></script>
-        <!--<script src="dist/js/pages/dashboard3.js'"></script>
-        -->
+
         <script>
             $("#catinput").hide();
             $("#addcat").click(function (e) {
                 e.preventDefault();
-                $("#catinput").show();
+                $("#catinput").slideDown(300);
             });
             $("#backcat").click(function (e) {
                 e.preventDefault();
-                $("#catinput").hide();
+                $("#catinput").slideUp(300);
             });
         </script>
+
         <script>
-    $(document).ready(function(){
-        $('#myModal').on('shown.bs.modal', function () {
-        $('#myInput').trigger('focus')
-        });
-    /*here i will make loop for get id category and status for contact with books */
-    /*حساب اجمالي الارباح و هي عبارة عن حاصل جمع سعر الكتب عند البيع بالاضافة الى سعر استعارة الكتاب*/
+$(function () {
+    // === Calculate all totals FIRST ===
+    var total = 0;
+    $('.totalprice').each(function(){
+        $(this).hide();
+        var salary = $(this).text().trim();
+        var val = parseFloat(salary);
+        if (!isNaN(val)) total += val;
     });
-        </script>
-        <script>
-    
+    $("#totalsalarys").text(total || 0);
 
+    var totalRental = 0;
+    $('.totalrental').each(function(){
+        $(this).hide();
+        var v = parseFloat($(this).text().trim());
+        if (!isNaN(v)) totalRental += v;
+    });
+    $('.salaryrental').text(totalRental).hide();
 
-    $(function () {
-    'use strict'
-    
-    var ticksStyle = {
-        fontColor: '#495057',
-        fontStyle: 'bold'
+    var totalSolid = 0;
+    $('.totalsolid').each(function(){
+        $(this).hide();
+        var v = parseFloat($(this).text().trim());
+        if (!isNaN(v)) totalSolid += v;
+    });
+    $('.salarysolid').text(totalSolid).hide();
+
+    // Update visible revenue breakdown
+    $('#soldtotals .count-up').text(totalSolid);
+    $('#rentedtotals .count-up').text(totalRental);
+
+    // === Charts ===
+    var isDark = true;
+    var ticksStyle = { fontColor: isDark ? 'rgba(255,255,255,0.5)' : '#495057', fontStyle: 'bold' };
+    var mode = 'index';
+    var intersect = true;
+    var $salesChart = $('#sales-chart');
+
+    if ($salesChart.length) {
+        new Chart($salesChart, {
+            type: 'bar',
+            data: {
+                labels: ['تفاصيل الارباح'],
+                datasets: [{
+                    backgroundColor: '#6C5CE7',
+                    borderColor: '#6C5CE7',
+                    borderRadius: 8,
+                    barPercentage: 0.5,
+                    data: [totalSolid],
+                    label: 'ارباح البيع'
+                }, {
+                    backgroundColor: '#00CEC9',
+                    borderColor: '#00CEC9',
+                    borderRadius: 8,
+                    barPercentage: 0.5,
+                    data: [totalRental],
+                    label: 'ارباح الاستعارة'
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                tooltips: {
+                    mode: mode, intersect: intersect,
+                    backgroundColor: 'rgba(0,0,0,0.8)',
+                    titleFontSize: 13, bodyFontSize: 12,
+                    cornerRadius: 8
+                },
+                hover: { mode: mode, intersect: intersect },
+                legend: {
+                    display: true, position: 'bottom',
+                    labels: {
+                        fontColor: isDark ? 'rgba(255,255,255,0.6)' : '#495057',
+                        usePointStyle: true, padding: 20
+                    }
+                },
+                scales: {
+                    yAxes: [{
+                        gridLines: {
+                            display: true,
+                            lineWidth: '2px',
+                            color: isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0, 0, 0, .08)',
+                            zeroLineColor: 'transparent'
+                        },
+                        ticks: $.extend({
+                            beginAtZero: true,
+                            fontColor: isDark ? 'rgba(255,255,255,0.5)' : '#495057',
+                            callback: function (value) {
+                                if (value >= 1000) { value /= 1000; value += 'k'; }
+                                return '$' + value;
+                            }
+                        }, ticksStyle)
+                    }],
+                    xAxes: [{
+                        display: true,
+                        gridLines: { display: false },
+                        ticks: ticksStyle
+                    }]
+                }
+            }
+        });
     }
 
-    var mode      = 'index'
-    var intersect = true
-
-    var $salesChart = $('#sales-chart')
-
-    var salesChart  = new Chart($salesChart, {
-
-        type   : 'bar',
-        
-        data   : {
-
-        labels  : [
-            
-
-            'تفاصيل الارباح',
-
-        ],
-
-
-        datasets: [
-            {
-            backgroundColor: '#007bff',
-            borderColor    : '#007bff',
-            data           : [ 
-                $('.salarysolid').text(),
-            ]
+    var pieCanvas = document.getElementById('visitors-chart');
+    if (pieCanvas) {
+        var pieChart = pieCanvas.getContext('2d');
+        new Chart(pieChart, {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    data: ['{{bookavailable}}','{{booksolid}}','{{bookrental}}'],
+                    backgroundColor: ['#00CEC9', '#FF6B6B', '#FDCB6E'],
+                    borderWidth: 0,
+                    hoverOffset: 15
+                }],
+                labels: ['Available', 'Sold', 'Rented']
             },
-            {
-            backgroundColor: '#ced4da',
-            borderColor    : '#ced4da',
-            data           : [ 
-                    $('.salaryrental').text(),
-            ]
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutoutPercentage: 65,
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        fontColor: isDark ? 'rgba(255,255,255,0.6)' : '#495057',
+                        fontSize: 13, usePointStyle: true, padding: 20
+                    }
+                },
+                tooltips: {
+                    backgroundColor: 'rgba(0,0,0,0.8)',
+                    titleFontSize: 13, bodyFontSize: 12,
+                    cornerRadius: 8,
+                    callbacks: {
+                        label: function(tooltipItem, data) {
+                            var dataset = data.datasets[0];
+                            var total = dataset.data.reduce(function(prev, current) {
+                                return parseInt(prev) + parseInt(current);
+                            }, 0);
+                            var currentValue = parseInt(dataset.data[tooltipItem.index]);
+                            var percentage = total > 0 ? ((currentValue / total) * 100).toFixed(1) : 0;
+                            return ' ' + data.labels[tooltipItem.index] + ': ' + percentage + '%';
+                        }
+                    }
+                }
             }
-        ]
-        },
+        });
+    }
 
-    
-    
-    options: {
-        maintainAspectRatio: false,
-        tooltips           : {
-            mode     : mode,
-            intersect: intersect
-        },
-        hover              : {
-            mode     : mode,
-            intersect: intersect
-        },
-        legend             : {
-            display: false
-        },
-        scales             : {
-            yAxes: [{
-            // display: false,
-            gridLines: {
-                display      : true,
-                lineWidth    : '4px',
-                color        : 'rgba(0, 0, 0, .2)',
-                zeroLineColor: 'transparent'
-            },
-            ticks    : $.extend({
-                beginAtZero: true,
+    // === Filters ===
+    var activeFilter = null;
+    function resetFilter() {
+        activeFilter = null;
+        $(".bookhide").show(300);
+        $('[data-filter]').removeClass('active');
+    }
 
-                // Include a dollar sign in the ticks
-                callback: function (value, index, values) {
-                if (value >= 1000) {
-                    value /= 1000
-                    value += 'k'
-                }
-                return '$' + value
-                }
-            }, ticksStyle)
-            }],
-            xAxes: [{
-            display  : true,
-            gridLines: {
-                display: false
-            },
-            ticks    : ticksStyle
-            }]
-        }
-        }
+    $(document).on('click', '[data-filter]', function(){
+        var val = $(this).data('filter');
+        if (val === 'all') { resetFilter(); return; }
+        activeFilter = val;
+        $('[data-filter]').removeClass('active');
+        $(this).addClass('active');
+        $(".bookhide").hide(300);
+        $(".book" + val).show(300);
     });
-    
-    var pieChart = document.getElementById('visitors-chart').getContext('2d')
-
-    var myPieChart = new Chart(pieChart, {
-        type: 'pie',
-        data: {
-        datasets: [{
-            data: ['{{bookavailable}}','{{booksolid}}','{{bookrental}}'],
-            backgroundColor :["#27c100","#f3545d","#fdaf4b"],
-            borderWidth: 10,
-            
-        }],
-        labels: ['Available', 'Sold', 'Rented'] 
-        },
-        options : {
-        responsive: true, 
-        maintainAspectRatio: false,
-        legend: {
-            position : 'bottom',
-            labels : {
-            fontColor: '#000',
-            fontSize: 15,
-            usePointStyle : true,
-            padding:30
-            }
-        },
-        pieceLabel: {
-            render: 'percentage',
-            fontColor: 'white',
-            fontSize: 14,
-        },
-
-
-        }
-    })
-
-    })
-
-
-    
+});
         </script>
-        <script>
-            {% for book in books %}
-            $(".cat{{book.category.id}}").click(function(){
-                $(".bookhide").hide();
-                $(".bookcat{{book.category.id}}").show();
-            });
-            $(".status{{book.status}}").click(function(){
-                $(".bookhide").hide();
-                $(".book{{book.status}}").show();
-            });
-            {% endfor %}
-        </script>
-        <script>
-            $(document).ready(function(){
-                var total = 0;
-                $('.totalprice').each(function(){
-                    $(this).hide();
-                    var salary = $(this).text();
-                    total += parseInt(salary);
-                });
-                $("#totalsalarys").text($("#totalsalarys").text()+total);
-                
-            });
-            
-                var total1 = 0;
-                $('.totalrental').each(function(){
-                    $(this).hide();
-                    var salary1 = $(this).text()
-                    total1 += parseInt(salary1);
-                });
-                $('.salaryrental').text(total1);
-                $('.salaryrental').hide();
-            
-            var total2 = 0;
-                $('.totalsolid').each(function(){
-                    $(this).hide();
-                    var salary2 = $(this).text()
-                    total2 += parseInt(salary2);
-                });
-                $('.salarysolid').text(total2);
-                $('.salarysolid').hide();
 
-
+        <script>
             $('#rental_period').keyup(function(){
-                $('#total_rental_price').val($('#rental_period').val()*$('#rental_price_day').val());
+                $('#total_rental_price').val(
+                    ($('#rental_period').val() || 0) * ($('#rental_price_day').val() || 0)
+                );
             });
         </script>
+
+        <script>
+            // 3D Tilt
+            $(document).ready(function(){
+                $('.card-widget').on('mousemove', function(e){
+                    var rect = this.getBoundingClientRect();
+                    var x = e.clientX - rect.left;
+                    var y = e.clientY - rect.top;
+                    var centerX = rect.width / 2;
+                    var centerY = rect.height / 2;
+                    var rotateX = (y - centerY) / centerY * -6;
+                    var rotateY = (x - centerX) / centerX * 6;
+                    $(this).css('transform',
+                        'perspective(1200px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-8px) scale(1.03)'
+                    );
+                }).on('mouseleave', function(){
+                    $(this).css('transform', 'perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)');
+                });
+            });
+        </script>
+
+        <script>
+            // Animated Counters
+            $(document).ready(function(){
+                $('.count-up').each(function(){
+                    var $this = $(this);
+                    var target = parseInt($this.text());
+                    if (isNaN(target)) return;
+                    var current = 0;
+                    var increment = Math.ceil(target / 30);
+                    var timer = setInterval(function(){
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        $this.text(current);
+                    }, 40);
+                });
+            });
+
+            // Close book dropdown when clicking outside
+            $(document).on('click', function(e) {
+                if (!$(e.target).closest('.book-dropdown').length) {
+                    $('.book-dropdown-menu').hide();
+                }
+            });
+        </script>
+
     </body>
 </html>

@@ -1,0 +1,226 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - list [ref=e3]:
+      - listitem [ref=e4]:
+        - link "" [ref=e5] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e6]: 
+      - listitem [ref=e7]:
+        - link " الرئيسية" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e9]: 
+          - text: الرئيسية
+    - generic [ref=e11]:
+      - searchbox "Search" [ref=e12]
+      - button "" [ref=e14] [cursor=pointer]:
+        - generic [ref=e15]: 
+    - list [ref=e16]:
+      - listitem [ref=e17]:
+        - button "" [ref=e18] [cursor=pointer]:
+          - generic [ref=e19]: 
+  - complementary [ref=e20]:
+    - link " LibraSys" [ref=e21] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e22]:
+        - generic [ref=e23]: 
+        - text: LibraSys
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - generic [ref=e27]: 
+        - link " لوحة التحكم" [ref=e29] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e30]: 
+          - text: لوحة التحكم
+      - navigation [ref=e31]:
+        - menu [ref=e32]:
+          - listitem [ref=e33]:
+            - link " الإحصائيات" [ref=e34] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e35]: 
+              - paragraph [ref=e36]: الإحصائيات
+          - listitem [ref=e37]:
+            - link " جميع الكتب" [ref=e38] [cursor=pointer]:
+              - /url: /books/
+              - generic [ref=e39]: 
+              - paragraph [ref=e40]: جميع الكتب
+          - listitem [ref=e41]:
+            - generic [ref=e42]: 
+            - text: التصنيفات
+          - listitem [ref=e43]:
+            - link " تصفح التصنيفات " [ref=e44] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e45]: 
+              - paragraph [ref=e46]:
+                - text: تصفح التصنيفات
+                - generic [ref=e47]: 
+            - text:        
+          - listitem [ref=e48]:
+            - generic [ref=e49]: 
+            - text: الحالة
+          - listitem [ref=e50] [cursor=pointer]:
+            - generic [ref=e51]:
+              - generic [ref=e52]: 
+              - paragraph [ref=e53]: الكل
+          - listitem [ref=e54] [cursor=pointer]:
+            - generic [ref=e55]:
+              - generic [ref=e56]: 
+              - paragraph [ref=e57]: تم بيعه
+          - listitem [ref=e58] [cursor=pointer]:
+            - generic [ref=e59]:
+              - generic [ref=e60]: 
+              - paragraph [ref=e61]: مستعار
+          - listitem [ref=e62] [cursor=pointer]:
+            - generic [ref=e63]:
+              - generic [ref=e64]: 
+              - paragraph [ref=e65]: متاح
+  - generic [ref=e68]:
+    - generic [ref=e70]:
+      - heading "جميع الكتب" [level=1] [ref=e71]: جميع الكتب
+      - link " إضافة كتاب" [ref=e72] [cursor=pointer]:
+        - /url: "#bookform"
+        - generic [ref=e73]: 
+        - text: إضافة كتاب
+      - paragraph [ref=e74]: تصفح جميع الكتب المتاحة في المكتبة
+    - text:  
+    - generic [ref=e78]:
+      - generic [ref=e79] [cursor=pointer]:
+        - generic [ref=e80]: 
+        - text: الكل
+      - generic [ref=e81] [cursor=pointer]:
+        - generic [ref=e82]: 
+        - text: game
+      - generic [ref=e83] [cursor=pointer]:
+        - generic [ref=e84]: 
+        - text: tamer
+    - generic [ref=e85]:
+      - generic [ref=e87]:
+        - generic [ref=e91]:
+          - generic [ref=e92]:
+            - generic [ref=e93]:
+              - generic [ref=e94]: 
+              - text: game
+            - generic [ref=e95]:
+              - generic [ref=e96]: 
+              - text: متاح
+          - heading "game of war" [level=5] [ref=e97]
+          - paragraph [ref=e98]:
+            - generic [ref=e99]: 
+            - text: BALI ABDELKOUDDOUS
+          - generic [ref=e100]:
+            - generic [ref=e102]:
+              - generic [ref=e103]: 
+              - text: "300.00"
+            - generic [ref=e105]:
+              - generic [ref=e106]: 
+              - text: 220 صفحة
+        - generic [ref=e108]:
+          - link " حذف" [ref=e109] [cursor=pointer]:
+            - /url: /delete/9/
+            - generic [ref=e110]: 
+            - text: حذف
+          - link " تعديل" [ref=e111] [cursor=pointer]:
+            - /url: /update/9/
+            - generic [ref=e112]: 
+            - text: تعديل
+      - generic [ref=e114]:
+        - generic [ref=e118]:
+          - generic [ref=e119]:
+            - generic [ref=e120]:
+              - generic [ref=e121]: 
+              - text: game
+            - generic [ref=e122]:
+              - generic [ref=e123]: 
+              - text: مستعار
+          - heading "friv" [level=5] [ref=e124]
+          - paragraph [ref=e125]:
+            - generic [ref=e126]: 
+            - text: BALI ABDELKOUDDOUS
+          - generic [ref=e127]:
+            - generic [ref=e129]:
+              - generic [ref=e130]: 
+              - text: 100.00/يوم
+            - generic [ref=e132]:
+              - generic [ref=e133]: 
+              - text: 613 صفحة
+        - generic [ref=e135]:
+          - link " حذف" [ref=e136] [cursor=pointer]:
+            - /url: /delete/10/
+            - generic [ref=e137]: 
+            - text: حذف
+          - link " تعديل" [ref=e138] [cursor=pointer]:
+            - /url: /update/10/
+            - generic [ref=e139]: 
+            - text: تعديل
+      - generic [ref=e141]:
+        - generic [ref=e145]:
+          - generic [ref=e146]:
+            - generic [ref=e147]:
+              - generic [ref=e148]: 
+              - text: game
+            - generic [ref=e149]:
+              - generic [ref=e150]: 
+              - text: مباع
+          - heading "fortnite" [level=5] [ref=e151]
+          - paragraph [ref=e152]:
+            - generic [ref=e153]: 
+            - text: BALI ABDELKOUDDOUS
+          - generic [ref=e154]:
+            - generic [ref=e156]:
+              - generic [ref=e157]: 
+              - text: "30.00"
+            - generic [ref=e159]:
+              - generic [ref=e160]: 
+              - text: 516 صفحة
+        - generic [ref=e162]:
+          - link " حذف" [ref=e163] [cursor=pointer]:
+            - /url: /delete/12/
+            - generic [ref=e164]: 
+            - text: حذف
+          - link " تعديل" [ref=e165] [cursor=pointer]:
+            - /url: /update/12/
+            - generic [ref=e166]: 
+            - text: تعديل
+      - generic [ref=e168]:
+        - generic [ref=e172]:
+          - generic [ref=e173]:
+            - generic [ref=e174]:
+              - generic [ref=e175]: 
+              - text: tamer
+            - generic [ref=e176]:
+              - generic [ref=e177]: 
+              - text: مباع
+          - heading "غل" [level=5] [ref=e178]
+          - paragraph [ref=e179]:
+            - generic [ref=e180]: 
+            - text: الالال
+          - generic [ref=e181]:
+            - generic [ref=e183]:
+              - generic [ref=e184]: 
+              - text: "668.00"
+            - generic [ref=e186]:
+              - generic [ref=e187]: 
+              - text: 6666 صفحة
+        - generic [ref=e189]:
+          - link " حذف" [ref=e190] [cursor=pointer]:
+            - /url: /delete/25/
+            - generic [ref=e191]: 
+            - text: حذف
+          - link " تعديل" [ref=e192] [cursor=pointer]:
+            - /url: /update/25/
+            - generic [ref=e193]: 
+            - text: تعديل
+  - contentinfo [ref=e194]:
+    - generic [ref=e195]:
+      - generic [ref=e196]:
+        - strong [ref=e197]: LibraSys © 2025-2026
+        - text: "| نظام إدارة المكتبات"
+      - generic [ref=e198]:
+        - link "" [ref=e199] [cursor=pointer]:
+          - /url: https://github.com/Tamer7459
+          - generic [ref=e200]: 
+        - link "" [ref=e201] [cursor=pointer]:
+          - /url: https://www.facebook.com/pktamer1
+          - generic [ref=e202]: 
+        - link "" [ref=e203] [cursor=pointer]:
+          - /url: https://www.instagram.com/x_tamer._x/
+          - generic [ref=e204]: 

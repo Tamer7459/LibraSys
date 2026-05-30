@@ -1,34 +1,37 @@
 {% extends 'base.html' %}
 {% block content %}
 <div style="direction: rtl" class="wrapper">
-    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <div class="card card-danger">
-            <div class="card-header">
-                <h3 class="card-title">حذف الكتاب</h3>
+        <div class="form-page-wrapper">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="glass-card delete-card fade-in-up">
+                            <div class="delete-icon">
+                                <i class="fas fa-trash"></i>
+                            </div>
+                            <h3>حذف الكتاب</h3>
+                            <p class="mb-2 font-weight-bold" style="font-size: 1.2rem; color: var(--text-primary);">
+                                "{{ book.title }}"
+                            </p>
+                            <p>هل أنت متأكد أنك تريد حذف هذا الكتاب؟</p>
+                            <p class="text-muted small">هذا الإجراء لا يمكن التراجع عنه</p>
+
+                            <form method="POST" enctype="multipart/form-data" class="mt-4">
+                                {% csrf_token %}
+                                <div class="d-flex justify-content-center gap-3">
+                                    <a href="{% url 'index' %}" type="button" class="btn btn-secondary px-4">
+                                        <i class="fas fa-arrow-right ml-1"></i> تراجع
+                                    </a>
+                                    <button type="submit" class="btn btn-danger px-4">
+                                        <i class="fas fa-trash ml-1"></i> حذف
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- /.card-header -->
-            <!-- form start -->
-            <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                <div class="row">
-                    <p class="p-3">هل تريد حقاً حذف الكتاب؟</p>
-                </div>
-                <!-- /.card-body -->
-
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-danger">حذف</button>
-
-                    <a
-                        href="{% url 'index' %}"
-                        type="button"
-                        class="btn btn-success"
-                    >
-                        تراجع
-                    </a>
-                </div>
-            </form>
         </div>
     </div>
 </div>
