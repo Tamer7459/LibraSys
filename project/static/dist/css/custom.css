@@ -142,6 +142,39 @@ body::before {
 }
 ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
 
+/* ===== Book Cover Image ===== */
+.book-cover-wrapper {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    position: relative;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.book-cover-wrapper.no-cover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.book-cover-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: rgba(255,255,255,0.5);
+}
+
 /* ===== Wrapper ===== */
 .wrapper { background: transparent !important; }
 .content-wrapper { 
