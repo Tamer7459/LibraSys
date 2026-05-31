@@ -1,0 +1,1343 @@
+[
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "app_project",
+    "model": "categories"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "app_project",
+    "model": "book"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "63n8nsx7rtivwkysh04iawovmuq181ws",
+  "fields": {
+    "session_data": ".eJxVjMEOwiAQRP-FsyEshS549O43kIVFqRpISnsy_rtt0oPeJvPezFsEWpcS1p7nMLE4CxCn3y5Seua6A35QvTeZWl3mKcpdkQft8to4vy6H-3dQqJdt7Qc1Km-TSZY9KA0QldE32gJq4wEdGkQYMkfL4KyLUWsHA4yESiUSny-XnjYF:1vdfHT:0kDaMQ27Coc3OjvbCwYEfJu70BblPSFpqmezgMwaZqw",
+    "expire_date": "2026-01-22T01:57:43.970Z"
+  }
+},
+{
+  "model": "app_project.categories",
+  "pk": 14,
+  "fields": {
+    "name": "finance"
+  }
+},
+{
+  "model": "app_project.categories",
+  "pk": 15,
+  "fields": {
+    "name": "Psychology"
+  }
+},
+{
+  "model": "app_project.categories",
+  "pk": 16,
+  "fields": {
+    "name": "Human Development"
+  }
+},
+{
+  "model": "app_project.book",
+  "pk": 26,
+  "fields": {
+    "title": "كتاب محاط بالحمقى",
+    "author": "مؤلف توماس اريكسون",
+    "photo_book": "photos/كتاب_محاط_بالحمقى.webp",
+    "photo_author": "photos/مؤلف_توماس_اريكسون.webp",
+    "pages": 320,
+    "price": "18.00",
+    "rental_price_day": null,
+    "rental_period": null,
+    "total_rental_price": null,
+    "active": true,
+    "status": "available",
+    "category": 15
+  }
+},
+{
+  "model": "app_project.book",
+  "pk": 27,
+  "fields": {
+    "title": "كتاب الاب الغني والاب الفقير",
+    "author": "مؤلف روبرت كيوساكي",
+    "photo_book": "photos/كتاب_الاب_الغني_و_الاب_الفقير.webp",
+    "photo_author": "photos/مؤلف_روبرت_كيوساكي.webp",
+    "pages": 336,
+    "price": "19.00",
+    "rental_price_day": null,
+    "rental_period": null,
+    "total_rental_price": null,
+    "active": true,
+    "status": "solid",
+    "category": 14
+  }
+},
+{
+  "model": "app_project.book",
+  "pk": 28,
+  "fields": {
+    "title": "كتاب اقفز",
+    "author": "مؤلف ستيف هارفي",
+    "photo_book": "photos/كتاب_اقفز.webp",
+    "photo_author": "photos/مؤلف_ستيف_هارفي.webp",
+    "pages": 300,
+    "price": "18.50",
+    "rental_price_day": "2.00",
+    "rental_period": 4,
+    "total_rental_price": "10.00",
+    "active": true,
+    "status": "rental",
+    "category": 16
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add categories",
+    "content_type": [
+      "app_project",
+      "categories"
+    ],
+    "codename": "add_categories"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change categories",
+    "content_type": [
+      "app_project",
+      "categories"
+    ],
+    "codename": "change_categories"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete categories",
+    "content_type": [
+      "app_project",
+      "categories"
+    ],
+    "codename": "delete_categories"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view categories",
+    "content_type": [
+      "app_project",
+      "categories"
+    ],
+    "codename": "view_categories"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add book",
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "codename": "add_book"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change book",
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "codename": "change_book"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete book",
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "codename": "delete_book"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view book",
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "codename": "view_book"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$K6C1vqr1IL3d2GgH51pBe8$KW2eWlrjdHZWFOgx/Lys7zKUFBCdLgZ/VM0kfzHPYRE=",
+    "last_login": "2026-01-08T01:57:43.860Z",
+    "is_superuser": true,
+    "username": "tamer",
+    "first_name": "",
+    "last_name": "",
+    "email": "tamer@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-01-08T01:46:48.517Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2026-01-08T02:03:00.624Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "categories"
+    ],
+    "object_id": "1",
+    "object_repr": "categories object (1)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2026-01-08T02:09:04.743Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "1",
+    "object_repr": "book object (1)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2026-01-08T02:11:16.105Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "2",
+    "object_repr": "game of throns",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2026-01-08T02:11:34.452Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "2",
+    "object_repr": "game of throns",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2026-01-08T02:20:47.608Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "2",
+    "object_repr": "game of throns",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Photo author\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2026-01-08T02:21:13.978Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "2",
+    "object_repr": "game of throns",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Photo book\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2026-01-08T09:37:38.445Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "2",
+    "object_repr": "game of throns",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2026-01-08T09:37:44.734Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "1",
+    "object_repr": "gamedcfgh",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2026-01-08T09:41:04.668Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "3",
+    "object_repr": "game of throns",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2026-01-08T09:42:47.662Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "3",
+    "object_repr": "game of throns",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2026-01-08T09:44:02.858Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "4",
+    "object_repr": "game of throns",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2026-01-08T09:50:58.629Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "4",
+    "object_repr": "game of throns",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2026-01-08T09:51:32.173Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "5",
+    "object_repr": "fortnite",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2026-01-08T09:52:51.064Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "6",
+    "object_repr": "god of war",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2026-01-08T09:53:41.831Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "7",
+    "object_repr": "red death redamption",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2026-01-08T09:57:33.189Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "7",
+    "object_repr": "red death redamption",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Photo book\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2026-01-08T09:57:50.149Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "7",
+    "object_repr": "red death redamption",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2026-01-08T09:57:54.269Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "6",
+    "object_repr": "god of war",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2026-01-08T09:59:16.077Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "5",
+    "object_repr": "fortnite",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2026-01-08T09:59:55.146Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "8",
+    "object_repr": "gamlkre",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2026-01-08T10:02:26.247Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "8",
+    "object_repr": "gamlkre",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2026-01-08T10:03:40.445Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "9",
+    "object_repr": "game of war",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2026-01-08T10:05:15.009Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "10",
+    "object_repr": "friv",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2026-01-08T10:06:27.925Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "11",
+    "object_repr": "tgfhjklp",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2026-01-08T10:06:46.235Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "11",
+    "object_repr": "tgfhjklp",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Retal price day\", \"Retal period\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2026-01-08T10:07:07.532Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "11",
+    "object_repr": "tgfhjklp",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2026-01-08T10:10:20.699Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "10",
+    "object_repr": "friv",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Photo book\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2026-01-08T10:11:01.432Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "10",
+    "object_repr": "friv",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Photo book\", \"Photo author\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2026-01-08T10:14:28.791Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "9",
+    "object_repr": "game of war",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2026-01-08T10:16:46.559Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "12",
+    "object_repr": "fortnite",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2026-01-08T11:22:46.043Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "10",
+    "object_repr": "friv",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Rental price day\", \"Rental period\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2026-01-08T11:23:36.099Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "10",
+    "object_repr": "friv",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2026-01-08T11:24:26.029Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "10",
+    "object_repr": "friv",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2026-01-08T11:26:52.265Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "13",
+    "object_repr": "hgcfh",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2026-01-08T13:03:31.365Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "16",
+    "object_repr": "hghvhvghvj",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2026-01-08T13:03:31.365Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "15",
+    "object_repr": "hghvhvghvj",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2026-01-08T13:09:14.627Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "17",
+    "object_repr": "hghvhvghvj",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2026-01-08T13:16:53.774Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "categories"
+    ],
+    "object_id": "2",
+    "object_repr": "Tamer",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2026-01-08T13:25:39.448Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "categories"
+    ],
+    "object_id": "3",
+    "object_repr": "5",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2026-01-08T14:08:49.738Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "18",
+    "object_repr": "yguyukbgyubkyukhbyukbh",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2026-01-08T14:34:08.185Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "categories"
+    ],
+    "object_id": "5",
+    "object_repr": "h",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2026-01-08T14:41:00.029Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "19",
+    "object_repr": "hgfdghjk",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2026-01-08T14:41:10.038Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "book"
+    ],
+    "object_id": "19",
+    "object_repr": "hgfdghjk",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Status\", \"Category\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2026-01-08T21:00:48.937Z",
+    "user": [
+      "tamer"
+    ],
+    "content_type": [
+      "app_project",
+      "categories"
+    ],
+    "object_id": "6",
+    "object_repr": "t",
+    "action_flag": 3,
+    "change_message": ""
+  }
+}
+]
