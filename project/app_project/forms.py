@@ -3,6 +3,15 @@ from .models import *
 from .forms import *
 
 class BookForm(forms.ModelForm):
+    photo_book_url = forms.URLField(
+        required=False,
+        widget=forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'أو أدخل رابط صورة الغلاف'})
+    )
+    photo_author_url = forms.URLField(
+        required=False,
+        widget=forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'أو أدخل رابط صورة المؤلف'})
+    )
+
     class Meta:
         model = book
         fields = '__all__'

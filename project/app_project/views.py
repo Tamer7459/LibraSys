@@ -1,8 +1,26 @@
+import urllib.request
+import os
+import uuid
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
+from django.core.files import File
+from django.core.files.temp import NamedTemporaryFile
 from django.db.models import ProtectedError
 from .models import *
 from .forms import *
+
+
+def download_image_from_url(url):
+    try:
+        result = urllib.request.urlopen(url, timeout=10)
+        img_temp = NamedTemporaryFile(delete=True)
+        img_temp.write(result.read())
+        img_temp.flush()
+        ext = os.path.splitext(url.split('/')[-1].split('?')[0])[1] or '.jpg'
+        filename = f"{uuid.uuid4().hex}{ext}"
+        return filename, File(img_temp)
+    except Exception:
+        return None, None
 
 
 def index(request):
@@ -15,7 +33,15 @@ def index(request):
         else:
             book_form = BookForm(request.POST, request.FILES)
             if book_form.is_valid():
-                book_form.save()
+                instance = book_form.save(commit=False)
+                # Download from URL if provided
+                for field_name in ['photo_book', 'photo_author']:
+                    url = book_form.cleaned_data.get(f'{field_name}_url')
+                    if url and not request.FILES.get(field_name):
+                        filename, file_obj = download_image_from_url(url)
+                        if filename and file_obj:
+                            getattr(instance, field_name).save(filename, file_obj, save=False)
+                instance.save()
                 return redirect('index')
 
     context = {
@@ -52,7 +78,14 @@ def update(request, id):
     if request.method == 'POST':
         form = BookForm(request.POST, request.FILES, instance=book_id)
         if form.is_valid():
-            form.save()
+            instance = form.save(commit=False)
+            for field_name in ['photo_book', 'photo_author']:
+                url = form.cleaned_data.get(f'{field_name}_url')
+                if url and not request.FILES.get(field_name):
+                    filename, file_obj = download_image_from_url(url)
+                    if filename and file_obj:
+                        getattr(instance, field_name).save(filename, file_obj, save=False)
+            instance.save()
             return redirect('index')
     else:
         form = BookForm(instance=book_id)
