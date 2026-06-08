@@ -1,10 +1,8 @@
-import urllib.request
 import os
 import uuid
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from django.core.files import File
-from django.core.files.temp import NamedTemporaryFile
+from django.core.files.base import ContentFile
 from django.db.models import ProtectedError
 from .models import *
 from .forms import *
@@ -12,18 +10,20 @@ from .forms import *
 
 def download_image_from_url(url):
     try:
+        import urllib.request
         result = urllib.request.urlopen(url, timeout=10)
-        img_temp = NamedTemporaryFile(delete=True)
-        img_temp.write(result.read())
-        img_temp.flush()
+        data = result.read()
         ext = os.path.splitext(url.split('/')[-1].split('?')[0])[1] or '.jpg'
         filename = f"{uuid.uuid4().hex}{ext}"
-        return filename, File(img_temp)
+        return filename, ContentFile(data)
     except Exception:
         return None, None
 
 
 def index(request):
+    book_form = BookForm()
+    cat_form = CategoryForm()
+
     if request.method == 'POST':
         if 'name' in request.POST:
             cat_form = CategoryForm(request.POST)
@@ -34,7 +34,6 @@ def index(request):
             book_form = BookForm(request.POST, request.FILES)
             if book_form.is_valid():
                 instance = book_form.save(commit=False)
-                # Download from URL if provided
                 for field_name in ['photo_book', 'photo_author']:
                     url = book_form.cleaned_data.get(f'{field_name}_url')
                     if url and not request.FILES.get(field_name):
@@ -47,8 +46,8 @@ def index(request):
     context = {
         'categories': categories.objects.all(),
         'books': book.objects.all(),
-        'form': BookForm(),
-        'categoryform': CategoryForm(),
+        'form': book_form,
+        'categoryform': cat_form,
         'allbooks': book.objects.filter(active=True).count(),
         'booksolid': book.objects.filter(status='solid').count(),
         'bookrental': book.objects.filter(status='rental').count(),

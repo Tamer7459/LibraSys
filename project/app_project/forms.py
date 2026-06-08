@@ -1,6 +1,5 @@
 from django import forms
 from .models import *
-from .forms import *
 
 class BookForm(forms.ModelForm):
     photo_book_url = forms.URLField(
