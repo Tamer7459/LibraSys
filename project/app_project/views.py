@@ -1,5 +1,6 @@
 import os
 import uuid
+import requests
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.core.files.base import ContentFile
@@ -10,14 +11,15 @@ from .forms import *
 
 def download_image_from_url(url):
     try:
-        import urllib.request
-        result = urllib.request.urlopen(url, timeout=10)
-        data = result.read()
+        result = requests.get(url, timeout=15, headers={'User-Agent': 'Mozilla/5.0'})
+        if result.status_code != 200:
+            return None, None, f'رابط الصورة لا يعمل (خطأ {result.status_code})'
+        data = result.content
         ext = os.path.splitext(url.split('/')[-1].split('?')[0])[1] or '.jpg'
         filename = f"{uuid.uuid4().hex}{ext}"
-        return filename, ContentFile(data)
-    except Exception:
-        return None, None
+        return filename, ContentFile(data), None
+    except Exception as e:
+        return None, None, f'فشل تحميل الصورة: {str(e)}'
 
 
 def index(request):
@@ -34,14 +36,19 @@ def index(request):
             book_form = BookForm(request.POST, request.FILES)
             if book_form.is_valid():
                 instance = book_form.save(commit=False)
+                dl_ok = True
                 for field_name in ['photo_book', 'photo_author']:
                     url = book_form.cleaned_data.get(f'{field_name}_url')
                     if url and not request.FILES.get(field_name):
-                        filename, file_obj = download_image_from_url(url)
+                        filename, file_obj, error = download_image_from_url(url)
                         if filename and file_obj:
                             getattr(instance, field_name).save(filename, file_obj, save=False)
-                instance.save()
-                return redirect('index')
+                        elif error:
+                            messages.error(request, error)
+                            dl_ok = False
+                if dl_ok:
+                    instance.save()
+                    return redirect('index')
 
     context = {
         'categories': categories.objects.all(),
@@ -78,14 +85,19 @@ def update(request, id):
         form = BookForm(request.POST, request.FILES, instance=book_id)
         if form.is_valid():
             instance = form.save(commit=False)
+            dl_ok = True
             for field_name in ['photo_book', 'photo_author']:
                 url = form.cleaned_data.get(f'{field_name}_url')
                 if url and not request.FILES.get(field_name):
-                    filename, file_obj = download_image_from_url(url)
+                    filename, file_obj, error = download_image_from_url(url)
                     if filename and file_obj:
                         getattr(instance, field_name).save(filename, file_obj, save=False)
-            instance.save()
-            return redirect('index')
+                    elif error:
+                        messages.error(request, error)
+                        dl_ok = False
+            if dl_ok:
+                instance.save()
+                return redirect('index')
     else:
         form = BookForm(instance=book_id)
     context = {
